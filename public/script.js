@@ -1,11 +1,23 @@
 const socket = io('/')
 const videoGrid = document.getElementById('video-grid')
-const myPeer = new Peer(undefined, {
-  host: '/',
-  port: '3001'
-})
+
+// const myPeer = new Peer(undefined, {
+//   host: '/',
+//   port: '3001'
+// })
+
+let id = null;
+
+const myPeer = new Peer(id, {
+  host: "evening-atoll-16293.herokuapp.com",
+  // host: "https://peerserver.hudektech.com/",
+  port: 443,
+  secure: true,
+});
+
 const myVideo = document.createElement('video')
 myVideo.muted = true
+
 const peers = {}
 navigator.mediaDevices.getUserMedia({
   video: true,
