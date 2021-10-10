@@ -16,7 +16,7 @@ const myPeer = new Peer(id, {
 });
 
 const myVideo = document.createElement('video')
-video.setAttribute("playsinline", true);
+myVideo.setAttribute("playsinline", true);
 myVideo.muted = true
 
 const peers = {}
