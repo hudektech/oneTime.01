@@ -2,6 +2,8 @@ if (process.env.NODE_ENV !== "production") {
   console.log(process.env.NODE_ENV);
   require('dotenv').config();
 }
+const PORT = process.env.PORT || 3000;
+
 const express = require('express')
 const app = express()
 const server = require('http').Server(app)
@@ -30,4 +32,4 @@ io.on('connection', socket => {
   })
 })
 
-server.listen(3000)
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
