@@ -63,6 +63,7 @@ function connectToNewUser(userId, stream) {
 function addVideoStream(video, stream) {
   video.srcObject = stream
   video.addEventListener('loadedmetadata', () => {
+    video.setAttribute("playsinline", true);
     video.play()
   })
   videoGrid.append(video)
